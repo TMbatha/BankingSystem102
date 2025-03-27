@@ -8,7 +8,7 @@ public class Account {
     private String accountNumber;
     private double balance;
     private LocalDate openDate;
-    private String customerName;
+    private Customer customer;
 
     public Account() {
     }
@@ -18,7 +18,7 @@ public class Account {
         this.accountNumber = builder.accountNumber;
         this.balance = builder.balance;
         this.openDate = builder.openDate;
-        this.customerName = builder.customerName;
+        this.customer = builder.customer;
     }
 
     // Getters
@@ -33,8 +33,8 @@ public class Account {
     public LocalDate getOpenDate() {
         return openDate;
     }
-    public String getCustomerName() {
-        return customerName;
+    public Customer getCustomer() {
+        return customer;
     }
 
     @Override
@@ -43,7 +43,7 @@ public class Account {
                 "accountNumber='" + accountNumber + '\'' +
                 ", balance=" + balance +
                 ", openDate=" + openDate +
-                ", customerName=" + customerName +
+                ", customer=" + customer +
                 '}';
     }
 
@@ -52,7 +52,7 @@ public class Account {
         private String accountNumber;
         private double balance;
         private LocalDate openDate;
-        private String customerName;
+        private Customer customer;
 
         public Builder setAccountNumber(String accountNumber) {
             this.accountNumber = accountNumber;
@@ -69,8 +69,8 @@ public class Account {
             return this;
         }
 
-        public Builder setcustomerName(String customerName) {
-            this.customerName = customerName;
+        public Builder setCustomer(Customer customer) {
+            this.customer = customer;
             return this;
         }
 
@@ -79,7 +79,7 @@ public class Account {
             this.accountNumber = account.accountNumber;
             this.balance = account.balance;
             this.openDate = account.openDate;
-            this.customerName = account.customerName;
+            this.customer = account.customer;
 
             return this;
         }

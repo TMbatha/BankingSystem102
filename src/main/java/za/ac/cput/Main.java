@@ -23,7 +23,7 @@ public class Main {
                 .setAccountNumber("ACC2468")
                 .setBalance(5000.00)
                 .setOpenDate(LocalDate.now())
-                .setcustomerName("Thabiso")
+                .setCustomer(cus1)
                 .build();
 
         System.out.println(account);
