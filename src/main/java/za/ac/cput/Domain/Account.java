@@ -1,5 +1,8 @@
 package za.ac.cput.Domain;
-
+/*Account.java
+Account model class
+Author: Siyabulela Mgijima (230680305)
+ */
 import java.time.LocalDate;
 public class Account {
     private String accountNumber; // Primary Key
