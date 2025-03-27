@@ -1,8 +1,11 @@
 package za.ac.cput;
 
+import za.ac.cput.Domain.Account;
 import za.ac.cput.Domain.Address;
 import za.ac.cput.Domain.Contact;
 import za.ac.cput.Domain.Customer;
+
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,5 +18,14 @@ public class Main {
 
         System.out.println(cus1);
         System.out.println(cus1);
+
+        Account account = new Account.Builder()
+                .setAccountNumber("ACC2468")
+                .setBalance(5000.00)
+                .setOpenDate(LocalDate.now())
+                .setCustomer(cus1)
+                .build();
+
+        System.out.println(account);
     }
 }
