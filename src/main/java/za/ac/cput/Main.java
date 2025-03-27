@@ -1,7 +1,6 @@
 package za.ac.cput;
 
 import za.ac.cput.Domain.Address;
-import za.ac.cput.Domain.BankBranch;
 import za.ac.cput.Domain.Contact;
 import za.ac.cput.Domain.Customer;
 
@@ -16,9 +15,5 @@ public class Main {
 
         System.out.println(cus1);
         System.out.println(cus1);
-
-        BankBranch branch = new BankBranch.Builder().setBranchName("Woodstock Branch").setBranchAddress(new Address.Builder().setCity("Cape Town").setSurburb("Woodstock").build()).setBranchContact(new Contact.Builder().setEmail("Capitec@gmail.com").setPhoneNumber("011-221-3322").build()).build();
-
-        System.out.println(branch);
     }
 }

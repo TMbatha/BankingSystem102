@@ -5,9 +5,10 @@ Author: Siyabulela Mgijima (230680305)
  */
 import java.time.LocalDate;
 public class Account {
-    private String accountNumber; // Primary Key
+    private String accountNumber;
     private double balance;
     private LocalDate openDate;
+    private String customerName;
 
     public Account() {
     }
@@ -17,6 +18,7 @@ public class Account {
         this.accountNumber = builder.accountNumber;
         this.balance = builder.balance;
         this.openDate = builder.openDate;
+        this.customerName = builder.customerName;
     }
 
     // Getters
@@ -31,6 +33,9 @@ public class Account {
     public LocalDate getOpenDate() {
         return openDate;
     }
+    public String getCustomerName() {
+        return customerName;
+    }
 
     @Override
     public String toString() {
@@ -38,6 +43,7 @@ public class Account {
                 "accountNumber='" + accountNumber + '\'' +
                 ", balance=" + balance +
                 ", openDate=" + openDate +
+                ", customerName=" + customerName +
                 '}';
     }
 
@@ -46,6 +52,7 @@ public class Account {
         private String accountNumber;
         private double balance;
         private LocalDate openDate;
+        private String customerName;
 
         public Builder setAccountNumber(String accountNumber) {
             this.accountNumber = accountNumber;
@@ -62,11 +69,17 @@ public class Account {
             return this;
         }
 
+        public Builder setcustomerName(String customerName) {
+            this.customerName = customerName;
+            return this;
+        }
+
 
         public Builder copy(Account account) {
             this.accountNumber = account.accountNumber;
             this.balance = account.balance;
             this.openDate = account.openDate;
+            this.customerName = account.customerName;
 
             return this;
         }
