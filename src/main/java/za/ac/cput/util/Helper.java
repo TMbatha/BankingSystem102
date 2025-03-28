@@ -1,6 +1,6 @@
 package za.ac.cput.util;
 
-import org.apache.commons.validator.*;
+//import org.apache.commons.validator.*;
 
 
 public class Helper {
