@@ -1,7 +1,7 @@
 package za.ac.cput.util;
 
 import java.time.LocalDate;
-import za.ac.cput.Domain.Customer;
+import za.ac.cput.domain.Customer;
 
 public class Helper {
 

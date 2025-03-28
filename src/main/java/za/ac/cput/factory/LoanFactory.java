@@ -5,11 +5,12 @@ Author: Lifa Mbangata (222558156)
 
 package za.ac.cput.factory;
 
-import za.ac.cput.Domain.Customer;
-import za.ac.cput.Domain.Loan;
+import za.ac.cput.domain.Customer;
+import za.ac.cput.domain.Loan;
 import za.ac.cput.util.Helper;
 
 public class LoanFactory {
+
     public static Loan createLoan(
             double loanAmount,
             double interestRate,
@@ -21,11 +22,9 @@ public class LoanFactory {
             String collateral // Changed to String
     ) {
         // Validate inputs
-        if (!Helper.isValidAmount(loanAmount) ||
-                !Helper.isValidInterestRate(interestRate) ||
+        if (!Helper.isValidInterestRate(interestRate) ||
                 !Helper.isValidLoanStatus(status) ||
                 !Helper.isPositiveInt(tenureMonths) ||
-                !Helper.isValidAmount(monthlyEMI) ||
                 Helper.isObjectNull(customer) ||
                 Helper.stringIsNullOrEmpty(purpose) || // Validate purpose
                 Helper.stringIsNullOrEmpty(collateral)) { // Validate collateral
