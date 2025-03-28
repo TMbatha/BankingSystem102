@@ -6,129 +6,101 @@
 package za.ac.cput.Domain;
 
 
-public abstract class Loan {
+public class Loan {
 
-    private int loanID;
     private double loanAmount;
     private double interestRate;
     private String status;
     private int tenureMonths;
     private double monthlyEMI;
-    private int customerID;
-
+    private Customer customer;
     protected Loan() {}
-
     // constructor that accepts a builder to set all fields
-    protected Loan(LoanBuilder<?> builder) {
-        this.loanID = builder.loanID;
+    protected Loan(LoanBuilder builder) {
         this.loanAmount = builder.loanAmount;
         this.interestRate = builder.interestRate;
         this.status = builder.status;
         this.tenureMonths = builder.tenureMonths;
         this.monthlyEMI = builder.monthlyEMI;
-        this.customerID = builder.customerID;
+        this.customer = builder.customer;
     }
-
     //getter methods for each field
-    public int getLoanID() {
-        return loanID;
-    }
-
     public double getLoanAmount() {
         return loanAmount;
     }
-
     public double getInterestRate() {
         return interestRate;
     }
-
     public String getStatus() {
         return status;
     }
-
     public int getTenureMonths() {
         return tenureMonths;
     }
-
     public double getMonthlyEMI() {
         return monthlyEMI;
     }
-
-    public int getCustomerID() {
-        return customerID;
+    public Customer getCustomer() {
+        return customer;
     }
-
-    //to striing to print loan details
     @Override
     public String toString() {
         return "Loan{" +
-                "loanID=" + loanID +
-                ", loanAmount=" + loanAmount +
+                "loanAmount=" + loanAmount +
                 ", interestRate=" + interestRate +
                 ", status='" + status + '\'' +
                 ", tenureMonths=" + tenureMonths +
                 ", monthlyEMI=" + monthlyEMI +
-                ", customerID=" + customerID +
+                ", customer=" + customer +
                 '}';
     }
-
     // abstract builder class for Loan
-    public abstract static class LoanBuilder<BuilderType extends LoanBuilder<BuilderType>> {
-        private int loanID;
+    public abstract static class LoanBuilder {
         private double loanAmount;
         private double interestRate;
         private String status;
         private int tenureMonths;
         private double monthlyEMI;
-        private int customerID;
-
-        // setters return correct builder type for method chaining
-        public BuilderType setLoanID (int loanID) {
-            this.loanID = loanID;
-            return self();
-        }
-        public BuilderType setLoanAmount (double loanAmount) {
+        private Customer customer;
+        public LoanBuilder setLoanAmount (double loanAmount) {
             this.loanAmount = loanAmount;
-            return self();
+            return this;
         }
-        public BuilderType setInterestRate (double interestRate) {
+        public LoanBuilder setInterestRate (double interestRate) {
             this.interestRate = interestRate;
-            return self();
+            return this;
         }
-        public BuilderType setStatus (String status) {
+        public LoanBuilder setStatus (String status) {
             this.status = status;
-            return self();
+            return this;
         }
-        public BuilderType setTenureMonths (int tenureMonths) {
+        public LoanBuilder setTenureMonths (int tenureMonths) {
             this.tenureMonths = tenureMonths;
-            return self();
+            return this;
         }
-        public BuilderType setMonthlyEMI (double monthlyEMI) {
+        public LoanBuilder setMonthlyEMI (double monthlyEMI) {
             this.monthlyEMI = monthlyEMI;
-            return self();
+            return this;
         }
-        public BuilderType setCustomerID (int customerID) {
-            this.customerID = customerID;
-            return self();
+        public LoanBuilder setCustomer (Customer customer) {
+            this.customer = customer;
+            return this;
         }
-
         //method to copy attributes from an existing Loan object to the builder
-        public BuilderType copy(Loan existingLoan) {
-            this.loanID = existingLoan.getLoanID();
+        public LoanBuilder copy(Loan existingLoan) {
             this.loanAmount = existingLoan.getLoanAmount();
             this.interestRate = existingLoan.getInterestRate();
             this.status = existingLoan.getStatus();
             this.tenureMonths = existingLoan.getTenureMonths();
             this.monthlyEMI = existingLoan.getMonthlyEMI();
-            this.customerID = existingLoan.getCustomerID();
-            return self(); // return the current builder instance for method chaining
+            this.customer = existingLoan.getCustomer();
+            return this; // return the current builder instance for method chaining
         }
-
-        //abstract method to be implememted in subclasses
-        protected abstract BuilderType self();
-
         //abstract method to build the final loan object
-        public abstract Loan build();
-
+        public Loan build(){
+            return new Loan(this);
+        }
     }
 }
+
+
