@@ -1,26 +1,29 @@
 package za.ac.cput.util;
 
+import java.time.LocalDate;
+import za.ac.cput.Domain.Customer;
+
 public class Helper {
-    public static boolean stringIsNullOrEmpty(String s) {
-        if (s == null || s.isEmpty()) {
+
+    public static boolean stringIsNullOrEmpty(String value) {
+        if(value.isEmpty() || value == null || value.equals("")){
             return true;
         }
         return false;
     }
 
-    public static boolean intIsEqualsToZero(int i) {
-        return i == 0;
+    public static boolean intIsEqualsToZero(int value) {
+        if(value == 0){
+            return true;
+        }
+        return false;
     }
 
     public static boolean isValidEmail(String email) {
-        // Placeholder for email validation logic
-        return true; // Modify as needed
+        //To-Do
+        return true;
     }
 
-    // New method to validate transaction amount
-    public static boolean isValidAmount(double amount) {
-        return amount > 0;
-    }
 
     // New method to validate transaction type
     public static boolean isValidTransactionType(String type) {
