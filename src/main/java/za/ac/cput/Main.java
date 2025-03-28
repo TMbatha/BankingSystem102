@@ -1,5 +1,7 @@
 package za.ac.cput;
 
+import za.ac.cput.Domain.*;
+import za.ac.cput.factory.*;
 import za.ac.cput.Domain.Account;
 import za.ac.cput.Domain.Customer;
 import za.ac.cput.factory.AccountFactory;
@@ -64,6 +66,21 @@ public class Main {
         System.out.println("=== Transaction Output ===");
         System.out.println(deposit);
         System.out.println(withdrawal);
+
+
+        // Create loan
+        Loan loan = LoanFactory.createLoan(
+                100000.00,  // loanAmount
+                5.5,         // interestRate
+                "approved",   // status
+                24,           // tenureMonths
+                1500.00,      // monthlyEMI
+                customer,     // customer
+                "Education",  // purpose (String)
+                "Property"    // collateral (String)
+        );
+
+        System.out.println(loan);
     }
 }
 
