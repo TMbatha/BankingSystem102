@@ -1,8 +1,6 @@
 package za.ac.cput;
 
 import za.ac.cput.Domain.Account;
-import za.ac.cput.Domain.Address;
-import za.ac.cput.Domain.Contact;
 import za.ac.cput.Domain.Customer;
 import za.ac.cput.factory.AccountFactory;
 import za.ac.cput.factory.AddressFactory;
