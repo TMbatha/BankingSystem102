@@ -13,6 +13,9 @@ public class Loan {
     private int tenureMonths;
     private double monthlyEMI;
     private Customer customer;
+    private String purpose;
+    private String collateral;
+
     protected Loan() {}
     // constructor that accepts a builder to set all fields
     protected Loan(LoanBuilder builder) {
@@ -22,6 +25,9 @@ public class Loan {
         this.tenureMonths = builder.tenureMonths;
         this.monthlyEMI = builder.monthlyEMI;
         this.customer = builder.customer;
+        this.purpose = builder.purpose;
+        this.collateral = builder.collateral;
+
     }
     //getter methods for each field
     public double getLoanAmount() {
@@ -42,6 +48,13 @@ public class Loan {
     public Customer getCustomer() {
         return customer;
     }
+    public String getPurpose() {
+        return purpose;
+    }
+    public String getCollateral() {
+        return collateral;
+    }
+
     @Override
     public String toString() {
         return "Loan{" +
@@ -51,16 +64,21 @@ public class Loan {
                 ", tenureMonths=" + tenureMonths +
                 ", monthlyEMI=" + monthlyEMI +
                 ", customer=" + customer +
+                ", purpose='" + purpose + '\'' +
+                ", collateral='" + collateral + '\'' +
                 '}';
     }
+
     // abstract builder class for Loan
-    public abstract static class LoanBuilder {
+    public static class LoanBuilder {
         private double loanAmount;
         private double interestRate;
         private String status;
         private int tenureMonths;
         private double monthlyEMI;
         private Customer customer;
+        private String purpose;
+        private String collateral;
         public LoanBuilder setLoanAmount (double loanAmount) {
             this.loanAmount = loanAmount;
             return this;
@@ -85,6 +103,14 @@ public class Loan {
             this.customer = customer;
             return this;
         }
+        public LoanBuilder setPurpose (String purpose) {
+            this.purpose = purpose;
+            return this;
+        }
+        public LoanBuilder setCollateral (String collateral) {
+            this.collateral = collateral;
+            return this;
+        }
         //method to copy attributes from an existing Loan object to the builder
         public LoanBuilder copy(Loan existingLoan) {
             this.loanAmount = existingLoan.getLoanAmount();
@@ -93,11 +119,17 @@ public class Loan {
             this.tenureMonths = existingLoan.getTenureMonths();
             this.monthlyEMI = existingLoan.getMonthlyEMI();
             this.customer = existingLoan.getCustomer();
+            this.purpose = existingLoan.getPurpose();
+            this.collateral = existingLoan.getCollateral();
             return this; // return the current builder instance for method chaining
         }
         //abstract method to build the final loan object
         public Loan build(){
             return new Loan(this);
         }
+
+        /*public PersonalLoan.PersonalLoanBuilder setPurpose(String purpose) {
+
+        }*/
     }
 }
