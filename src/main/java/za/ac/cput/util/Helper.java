@@ -43,5 +43,9 @@ public class Helper {
     public static boolean isValidInterestRate(double rate) {
         return rate > 0 && rate <= 20.0;
     }
+    // NEW METHOD: Check if an object is null
+    public static boolean isObjectNull(Object obj) {
+        return obj == null;
+    }
 
 }

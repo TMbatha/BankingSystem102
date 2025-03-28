@@ -38,30 +38,23 @@ public class Main {
         System.out.println(deposit);
         System.out.println(withdrawal);
 
-        // Create a loan using the factory
+
+        // Create loan
         Loan loan = LoanFactory.createLoan(
-                5.5,
-                "approved",
-                24,
-                1500.0,
-                customer
+                100000.00,  // loanAmount
+                5.5,         // interestRate
+                "approved",   // status
+                24,           // tenureMonths
+                1500.00,      // monthlyEMI
+                customer,     // customer
+                "Education",  // purpose (String)
+                "Property"    // collateral (String)
         );
 
-        System.out.println("\n=== Loan Output ===");
         System.out.println(loan);
-
-        // Create personal loan
-        PersonalLoan personalLoan = PersonalLoanFactory.createPersonalLoan(
-                150000.00,     // loan amount
-                7.5,           // interest rate
-                "approved",     // status
-                60,            // 5-year tenure
-                customer,      // existing customer object
-                "Home Renovation",  // purpose
-                "Property Deed"     // collateral
-        );
-
-        System.out.println("\n=== Personal Loan ===");
-        System.out.println(personalLoan);
     }
-}
+
+
+
+    }
+
