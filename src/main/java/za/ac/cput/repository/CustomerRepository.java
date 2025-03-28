@@ -24,7 +24,7 @@ public class CustomerRepository implements ICustomerRepository {
 
 
     @Override
-    public Customer addCustomer(Customer customer) {
+    public Customer add(Customer customer) {
         boolean success = customerList.add(customer);
         if (success) {
             return customer;

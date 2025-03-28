@@ -3,8 +3,8 @@ package za.ac.cput.factory;
 Account model class
 Author: Siyabulela Mgijima (230680305)
  */
-import za.ac.cput.Domain.Account;
-import za.ac.cput.Domain.Customer;
+import za.ac.cput.domain.Account;
+import za.ac.cput.domain.Customer;
 import za.ac.cput.util.Helper;
 import java.time.LocalDate;
 public class AccountFactory {
