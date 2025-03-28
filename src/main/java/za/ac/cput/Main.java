@@ -1,6 +1,9 @@
 package za.ac.cput;
 
-import za.ac.cput.Domain.*;
+import za.ac.cput.Domain.Account;
+import za.ac.cput.Domain.Address;
+import za.ac.cput.Domain.Contact;
+import za.ac.cput.Domain.Customer;
 
 import java.time.LocalDate;
 
@@ -24,19 +27,5 @@ public class Main {
                 .build();
 
         System.out.println(account);
-
-        PersonalLoan pl =(PersonalLoan) new PersonalLoan.PersonalLoanBuilder().setPurpose("Travel").setCollateral("Car").setCustomer(cus1).setTenureMonths(24).setStatus("Approved").setInterestRate(5.5).setLoanAmount(100000).setMonthlyEMI(5000).build();
-
-        System.out.println("Original PersonalLoan:");
-        System.out.println(pl);
-        // Creating a copy of the PersonalLoan object
-        PersonalLoan copiedLoan = new PersonalLoan.PersonalLoanBuilder()
-                .copy(pl)
-                .build();
-        // Display the copied PersonalLoan
-        System.out.println("\nCopied PersonalLoan:");
-        System.out.println(copiedLoan);
     }
 }
-
-
