@@ -58,5 +58,5 @@ public class PersonalLoan extends Loan {
             return new PersonalLoan(this);
         }
     }
-    }
+}
 
