@@ -1,4 +1,4 @@
-package za.ac.cput.Domain;
+package za.ac.cput.domain;
 
 /* Represents a financial transaction in the banking system
    Author: 222614153

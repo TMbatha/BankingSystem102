@@ -1,8 +1,8 @@
 package za.ac.cput.factory;
 
-import za.ac.cput.Domain.Address;
-import za.ac.cput.Domain.Contact;
-import za.ac.cput.Domain.Customer;
+import za.ac.cput.domain.Address;
+import za.ac.cput.domain.Contact;
+import za.ac.cput.domain.Customer;
 import za.ac.cput.util.Helper;
 
 public class CustomerFactory {

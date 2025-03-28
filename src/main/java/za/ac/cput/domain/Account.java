@@ -1,4 +1,4 @@
-package za.ac.cput.Domain;
+package za.ac.cput.domain;
 /*Account.java
 Account model class
 Author: Siyabulela Mgijima (230680305)

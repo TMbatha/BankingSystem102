@@ -1,4 +1,4 @@
-package za.ac.cput.Domain;
+package za.ac.cput.domain;
 
 public class Customer {
     private String customerName, customerSurname;

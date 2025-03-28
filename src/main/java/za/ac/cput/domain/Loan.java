@@ -3,7 +3,7 @@ Loan pojo class
 Author: Lifa Mbangata (222558156)
 */
 
-package za.ac.cput.Domain;
+package za.ac.cput.domain;
 
 public class Loan {
 

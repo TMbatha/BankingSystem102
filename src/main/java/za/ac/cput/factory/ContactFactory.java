@@ -1,5 +1,5 @@
 package za.ac.cput.factory;
-import za.ac.cput.Domain.Contact;
+import za.ac.cput.domain.Contact;
 import za.ac.cput.util.Helper;
 
 public class ContactFactory {
