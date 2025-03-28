@@ -4,7 +4,7 @@ package za.ac.cput.factory;
 */
 
 
-import za.ac.cput.Domain.Transaction;
+import za.ac.cput.domain.Transaction;
 import za.ac.cput.util.Helper;
 
 public class TransactionFactory {

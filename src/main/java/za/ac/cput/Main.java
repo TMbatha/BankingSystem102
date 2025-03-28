@@ -18,8 +18,8 @@ public class Main {
 
         CustomerRepository cusRepo = (CustomerRepository) CustomerRepository.getRepository();
 
-        cusRepo.addCustomer(cus1);
-        cusRepo.addCustomer(cus2);
+        cusRepo.add(cus1);
+        cusRepo.add(cus2);
 
         System.out.println("We are here");
         System.out.println(cusRepo.read("Lifa"));
