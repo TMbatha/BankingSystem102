@@ -2,7 +2,7 @@ package za.ac.cput.Domain;
 
 public class Address {
 
-    private String houseNumber, streetName, surburb, city, country;
+    private String houseNumber, streetName, suburb, city, country;
     private int postalCode;
 
     private Address() {
@@ -11,7 +11,7 @@ public class Address {
     private Address(Builder builder) {
         this.houseNumber = builder.houseNumber;
         this.streetName = builder.streetName;
-        this.surburb = builder.surburb;
+        this.suburb = builder.suburb;
         this.city = builder.city;
         this.country = builder.country;
         this.postalCode = builder.postalCode;
@@ -26,7 +26,7 @@ public class Address {
     }
 
     public String getSurburb() {
-        return surburb;
+        return suburb;
     }
 
     public String getCity() {
@@ -46,7 +46,7 @@ public class Address {
         return "Address{" +
                 "houseNumber='" + houseNumber + '\'' +
                 ", streetName='" + streetName + '\'' +
-                ", surburb='" + surburb + '\'' +
+                ", suburb='" + suburb + '\'' +
                 ", city='" + city + '\'' +
                 ", country='" + country + '\'' +
                 ", postalCode=" + postalCode +
@@ -54,7 +54,7 @@ public class Address {
     }
 
     public static class Builder {
-        private String houseNumber, streetName, surburb, city, country;
+        private String houseNumber, streetName, suburb, city, country;
         private int postalCode;
 
         public Builder setHouseNumber(String houseNumber) {
@@ -67,8 +67,8 @@ public class Address {
             return this;
         }
 
-        public Builder setSurburb(String surburb) {
-            this.surburb = surburb;
+        public Builder setSuburb(String suburb) {
+            this.suburb = suburb;
             return this;
         }
 
@@ -90,7 +90,7 @@ public class Address {
         public Builder copy(Address address){
             this.houseNumber = address.houseNumber;
             this.streetName = address.streetName;
-            this.surburb = address.surburb;
+            this.suburb = address.suburb;
             this.city = address.city;
             this.country = address.country;
             this.postalCode = address.postalCode;
