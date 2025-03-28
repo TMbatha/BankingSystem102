@@ -1,10 +1,6 @@
 package za.ac.cput;
 
-import za.ac.cput.Domain.Account;
-import za.ac.cput.Domain.Address;
-import za.ac.cput.Domain.Contact;
-import za.ac.cput.Domain.Customer;
-import za.ac.cput.Domain.Transaction;
+import za.ac.cput.Domain.*;
 
 import java.time.LocalDate;
 
@@ -68,5 +64,18 @@ public class Main {
         System.out.println("=== Transaction Output ===");
         System.out.println(deposit);
         System.out.println(withdrawal);
+
+
+        PersonalLoan pl = (PersonalLoan) new PersonalLoan.PersonalLoanBuilder().setPurpose("Travel").setCollateral("Car").setCustomer(cus1).setTenureMonths(24).setStatus("Approved").setInterestRate(7.5).setLoanAmount(100000).setMonthlyEMI(5000).build
+                ();
+        System.out.println("Original PersonalLoan:");
+        System.out.println(pl);
+        // Creating a copy of the PersonalLoan object
+        PersonalLoan copiedLoan = new PersonalLoan.PersonalLoanBuilder()
+                .copy(pl)
+                .build();
+        // Display the copied PersonalLoan
+        System.out.println("\nCopied PersonalLoan:");
+        System.out.println(copiedLoan);
     }
-}
+    }
