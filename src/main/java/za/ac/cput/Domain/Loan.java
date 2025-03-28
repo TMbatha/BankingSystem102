@@ -6,7 +6,7 @@
 package za.ac.cput.Domain;
 
 
-public class Loan {
+public class Loan {// this is a loan class
 
     private double loanAmount;
     private double interestRate;
