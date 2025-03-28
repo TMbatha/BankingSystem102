@@ -30,8 +30,8 @@ public class Main {
         // Customer repository
         ICustomerRepository cusRepo = CustomerRepository.getRepository();
 
-        cusRepo.addCustomer(cus1);
-        cusRepo.addCustomer(cus2);
+        cusRepo.add(cus1);
+        cusRepo.add(cus2);
 
         System.out.println("We are here");
         System.out.println(cusRepo.read("Lifa"));
@@ -80,8 +80,8 @@ public class Main {
                 .build();
 
         // Adding transactions to the repository
-        transactionRepo.addCustomer(deposit);
-        transactionRepo.addCustomer(withdrawal);
+        transactionRepo.add(deposit);
+        transactionRepo.add(withdrawal);
 
         System.out.println("Transactions after addition: " + transactionRepo.getAll());
 

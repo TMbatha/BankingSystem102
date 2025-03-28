@@ -28,7 +28,7 @@ public class TransactionRepository implements ITransactionRepository {
     }
 
     @Override
-    public Transaction addCustomer(Transaction transaction) {
+    public Transaction add(Transaction transaction) {
         boolean success = transactionList.add(transaction);
         if (success) {
             return transaction;
