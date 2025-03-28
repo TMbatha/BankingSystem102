@@ -1,4 +1,7 @@
 package za.ac.cput.repository;
+/*
+Author: Thabiso Mbatha (221563423)
+ */
 
 import za.ac.cput.domain.Customer;
 

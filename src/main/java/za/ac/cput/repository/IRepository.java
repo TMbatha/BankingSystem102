@@ -1,4 +1,7 @@
 package za.ac.cput.repository;
+/*
+Author: Thabiso Mbatha (221563423)
+ */
 
 public interface IRepository<Obj, ID> {
     Obj add(Obj obj);

@@ -1,4 +1,7 @@
 package za.ac.cput.domain;
+/*
+Author: Thabiso Mbatha (221563423)
+ */
 
 public class Contact {
     private String phoneNumber, email;
