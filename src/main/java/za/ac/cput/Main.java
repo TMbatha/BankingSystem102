@@ -1,17 +1,26 @@
 package za.ac.cput;
 
+import za.ac.cput.domain.Account;
 import za.ac.cput.domain.Address;
 import za.ac.cput.domain.Contact;
 import za.ac.cput.domain.Customer;
+import za.ac.cput.factory.AccountFactory;
+import za.ac.cput.factory.AddressFactory;
+import za.ac.cput.factory.ContactFactory;
+import za.ac.cput.factory.CustomerFactory;
+import za.ac.cput.repository.AccountRepository;
 import za.ac.cput.domain.Transaction;
 import za.ac.cput.factory.AddressFactory;
 import za.ac.cput.factory.ContactFactory;
 import za.ac.cput.factory.CustomerFactory;
 import za.ac.cput.factory.TransactionFactory;
 import za.ac.cput.repository.CustomerRepository;
+import za.ac.cput.repository.IAccountRepository;
 import za.ac.cput.repository.ICustomerRepository;
 import za.ac.cput.repository.ITransactionRepository;
 import za.ac.cput.repository.TransactionRepository;
+
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
@@ -105,9 +114,39 @@ public class Main {
         // Display all transactions after the update
         System.out.println("After Transaction Update: " + transactionRepo.getAll());
 
+        // Create accounts using the factory
+        Account acc1 = AccountFactory.createAccount(
+                "ACC123", 1000.0, LocalDate.now(), cus1
+        );
+        Account acc2 = AccountFactory.createAccount(
+                "ACC456", 500.0, LocalDate.now(), cus2
+        );
+
+        // Get the repository instance
+        IAccountRepository accountRepo = AccountRepository.getRepository();
+
+        // Add accounts to the repository
+        accountRepo.add(acc1);
+        accountRepo.add(acc2);
+
+        // Read an account
+        System.out.println("Read Account: " + accountRepo.read("ACC123"));
+
+        // Update an account
+        Account updatedAccount = AccountFactory.createAccount(
+                "ACC123", 2000.0, LocalDate.now(), cus1
+        );
+        accountRepo.update(updatedAccount);
+        System.out.println("Updated Account: " + accountRepo.read("ACC123"));
+
+        // Delete an account
+        accountRepo.delete("ACC456");
+        System.out.println("After Delete: " + accountRepo.getAll());
+      
         // Deleting a transaction
         transactionRepo.delete("TXN002");
         System.out.println("After Transaction Delete: " + transactionRepo.getAll());
         // End transaction section
+
     }
 }
