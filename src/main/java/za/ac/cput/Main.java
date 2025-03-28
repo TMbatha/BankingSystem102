@@ -1,14 +1,7 @@
 package za.ac.cput;
 
-import za.ac.cput.Domain.Account;
-import za.ac.cput.Domain.Address;
-import za.ac.cput.Domain.Contact;
-import za.ac.cput.Domain.Customer;
-import za.ac.cput.Domain.Transaction;
-import za.ac.cput.factory.TransactionFactory;
-import za.ac.cput.factory.AddressFactory;
-import za.ac.cput.factory.ContactFactory;
-import za.ac.cput.factory.CustomerFactory;
+import za.ac.cput.Domain.*;
+import za.ac.cput.factory.*;
 
 import java.time.LocalDate;
 
@@ -44,5 +37,31 @@ public class Main {
         System.out.println("=== Transaction Output ===");
         System.out.println(deposit);
         System.out.println(withdrawal);
+
+        // Create a loan using the factory
+        Loan loan = LoanFactory.createLoan(
+                5.5,
+                "approved",
+                24,
+                1500.0,
+                customer
+        );
+
+        System.out.println("\n=== Loan Output ===");
+        System.out.println(loan);
+
+        // Create personal loan
+        PersonalLoan personalLoan = PersonalLoanFactory.createPersonalLoan(
+                150000.00,     // loan amount
+                7.5,           // interest rate
+                "approved",     // status
+                60,            // 5-year tenure
+                customer,      // existing customer object
+                "Home Renovation",  // purpose
+                "Property Deed"     // collateral
+        );
+
+        System.out.println("\n=== Personal Loan ===");
+        System.out.println(personalLoan);
     }
 }

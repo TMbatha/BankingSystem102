@@ -54,7 +54,7 @@ public class Loan {
                 '}';
     }
     // abstract builder class for Loan
-    public abstract static class LoanBuilder {
+    public static class LoanBuilder {
         private double loanAmount;
         private double interestRate;
         private String status;

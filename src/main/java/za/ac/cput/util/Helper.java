@@ -26,4 +26,22 @@ public class Helper {
     public static boolean isValidTransactionType(String type) {
         return type.equalsIgnoreCase("DEPOSIT") || type.equalsIgnoreCase("WITHDRAWAL");
     }
+
+    // NEW METHODS ADDED FOR LOAN VALIDATION
+    public static boolean isValidLoanStatus(String status) {
+        return status != null && (
+                status.equalsIgnoreCase("approved") ||
+                        status.equalsIgnoreCase("pending") ||
+                        status.equalsIgnoreCase("rejected")
+        );
+    }
+
+    public static boolean isPositiveInt(int value) {
+        return value > 0;
+    }
+
+    public static boolean isValidInterestRate(double rate) {
+        return rate > 0 && rate <= 20.0;
+    }
+
 }
