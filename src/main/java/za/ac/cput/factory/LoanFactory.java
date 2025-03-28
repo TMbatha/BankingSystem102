@@ -11,6 +11,7 @@ import za.ac.cput.util.Helper;
 
 public class LoanFactory {
 
+
     public static Loan createLoan(
             double loanAmount,
             double interestRate,
@@ -42,4 +43,5 @@ public class LoanFactory {
                 .setCollateral(collateral) // Pass String argument
                 .build();
     }
+
 }

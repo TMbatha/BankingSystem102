@@ -7,6 +7,7 @@ package za.ac.cput.domain;
 
 public class Loan {
 
+
     private double loanAmount;
     private double interestRate;
     private String status;
@@ -16,9 +17,12 @@ public class Loan {
     private String purpose;
     private String collateral;
 
+
+
     protected Loan() {}
     // constructor that accepts a builder to set all fields
     protected Loan(LoanBuilder builder) {
+
         this.loanAmount = builder.loanAmount;
         this.interestRate = builder.interestRate;
         this.status = builder.status;
@@ -30,6 +34,7 @@ public class Loan {
 
     }
     //getter methods for each field
+
     public double getLoanAmount() {
         return loanAmount;
     }
@@ -71,6 +76,7 @@ public class Loan {
 
     // abstract builder class for Loan
     public static class LoanBuilder {
+
         private double loanAmount;
         private double interestRate;
         private String status;
@@ -79,6 +85,11 @@ public class Loan {
         private Customer customer;
         private String purpose;
         private String collateral;
+
+        public LoanBuilder setLoanId(String loanId) {
+            //this.loanId = loanId;
+            return this;
+        }
         public LoanBuilder setLoanAmount (double loanAmount) {
             this.loanAmount = loanAmount;
             return this;
