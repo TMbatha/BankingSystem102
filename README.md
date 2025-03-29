@@ -34,4 +34,4 @@ Always pull the latest changes before working on a new task: git pull origin mas
 
 Commit your work regularly and create pull requests for merging.
 
-Follow the project structure and adhere to coding standards. UML 1.pdf
+Follow the project structure and adhere to coding standards. 
